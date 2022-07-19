@@ -1,0 +1,110 @@
+Logo
+Search docs
+FIRST STEPS
+
+Read the Docs tutorial
+Getting Started with Sphinx
+Getting Started with MkDocs
+Importing Your Documentation
+Choosing Between Our Two Platforms
+FEATURES
+
+Main Features
+Configuration File
+Version 2
+Supported settings
+Schema
+Legacy build specification
+Migrating from v1
+Migrating from the web interface
+VCS Integrations
+Custom Domains
+Versioned Documentation
+Downloadable Documentation
+Documentation Hosting Features
+Server Side Search
+Traffic Analytics
+Preview Documentation from Pull Requests
+Build Notifications and Webhooks
+Security Log
+Connecting Your VCS Account
+Build process
+Build customization
+Environment Variables
+Badges
+Site Support
+Frequently Asked Questions
+HOW-TO GUIDES
+
+Guides for documentation authors
+Guides for project administrators
+Guides for developers and designers
+Example projects
+ADVANCED FEATURES
+
+Subprojects
+Single Version Documentation
+Flyout Menu
+Feature Flags
+Localization of Documentation
+User-defined Redirects
+Automatic Redirects
+Automation Rules
+Canonical URLs
+Public API
+READ THE DOCS FOR BUSINESS
+
+Read the Docs for Business
+Organizations
+Project Privacy Level
+Sharing
+Single Sign-On
+ABOUT READ THE DOCS
+
+Security
+DMCA Takedown Policy
+Policy for Abandoned Projects
+Changelog
+About Read the Docs
+Read the Docs Team
+Read the Docs Open Source Philosophy
+The Story of Read the Docs
+Advertising
+Sponsors of Read the Docs
+Legal Documents and Policies
+Developer Documentation
+Glossary
+Google Summer of Code
+Read the Docs user documentation
+ » Configuration File » Configuration File V2
+Configuration File V2¶
+Read the Docs supports configuring your documentation builds with a YAML file. The configuration file must be in the root directory of your project and be named .readthedocs.yaml.
+
+All options are applied to the version containing this file. Below is an example YAML file which shows the most common configuration options:
+
+SphinxMkDocs
+# .readthedocs.yaml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# Set the version of Python and other tools you might need
+build:
+  os: ubuntu-20.04
+  tools:
+    python: "3.9"
+    # You can also specify other tool versions:
+    # nodejs: "16"
+    # rust: "1.55"
+    # golang: "1.17"
+
+# Build documentation in the docs/ directory with Sphinx
+sphinx:
+   configuration: docs/conf.py
+
+# If using Sphinx, optionally build your docs in additional formats such as PDF
+formats:
+   - pdf
+   - md
